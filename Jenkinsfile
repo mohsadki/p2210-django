@@ -3,15 +3,15 @@ pipeline {
   stages {
     stage('Stage 0 : start') {
       steps {
-        echo 'Hi, starting now'
-        emailext(subject: 'p2210-django - pipeline runining', attachLog: true, to: 'simohamed.seddik@outlook.fr', body: 'new pipeline runining')
-        mail(subject: 'p2210-django', body: 'p2210-django', to: 'simohamed.seddik@outlook.fr')
+        echo '== Stage 0 : Start =='
+        mail(subject: 'p2210-django - START', body: 'p2210-django', to: 'simohamed.seddik@outlook.fr')
       }
     }
 
     stage('Stage 1 : Build') {
       steps {
-        echo '== TEST =='
+        echo '== Stage 1 : Start =='
+        git 'https://github.com/mohsadki/p2210-django.git'
       }
     }
 
